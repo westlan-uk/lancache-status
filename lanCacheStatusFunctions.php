@@ -22,8 +22,16 @@ function isProcessRunning($prog) {
 function getStatus() {
 	return array(
 		array( 
+			'name' => 'disk_total_space',
+			'value' => bytesToHuman(disk_total_space("/srv/lancache")),
+		),
+		array( 
 			'name' => 'disk_free_space',
 			'value' => bytesToHuman(disk_free_space("/srv/lancache")),
+		),
+		array( 
+			'name' => 'disk_available_percent',
+			'value' => number_format(100 - ((disk_free_space("/srv/lancache") / disk_total_space("/srv/lancache")) * 100), 2),
 		),
 		array( 
 			'name' => 'requests_HIT',

@@ -12,7 +12,7 @@ foreach (getStatus() as $stat) {
 	}
 
 	echo '<tr>';
-	echo '<td>' . $stat['name'] . '</td><td>' . $stat['value'] . '</td><td>' . $stat['description']. '</td>';
+	echo '<td valign = "top">' . $stat['name'] . '</td><td>' . $stat['value'] . '</td><td>' . $stat['description']. '</td>';
 	echo '</tr>';
 }
 echo '</table>';
